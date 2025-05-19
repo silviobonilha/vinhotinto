@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filosofia e Vinho Tinto - Prof. Silvio Bonilha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #f8f5f2;
+            color: #333;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .wine-red {
+            color: #722f37;
+        }
+        
+        .bg-wine {
+            background-color: #722f37;
+        }
+        
+        .podcast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(114, 47, 55, 0.2);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23722f37' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-wine text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-wine-glass-alt text-3xl mr-3"></i>
+                    <div>
+                        <h1 class="title-font text-3xl font-bold">Filosofia e Vinho Tinto</h1>
+                        <p class="italic text-sm opacity-90">"Então, tomando o cálice de vinho, deu graças a Deus e, em seguida, o deu aos seus discípulos, dizendo:<br> Bebam dele todos. Isto é o meu sangue..." (Mateus 26:27,28)</p>
+                    <p class="italic text-sm opacity-90">  "In vino veritas" Plínio, o Velho (~ 23-79 d.C.). </p>
+                    </div>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#podcasts" class="hover:underline font-medium">Podcasts</a>
+                    <a href="#sobre" class="hover:underline font-medium">Sobre</a>
+                    <a href="#contato" class="hover:underline font-medium">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="title-font text-4xl md:text-5xl font-bold mb-4 wine-red">Reflexões que inspiram</h2>
+                <p class="text-lg mb-6">Explore os profundos diálogos entre filosofia, teologia e a vida através dos podcasts do Professor Silvio Bonilha. Uma jornada intelectual regada ao melhor vinho tinto das ideias.</p>
+                <div class="flex space-x-4">
+                    <a href="#podcasts" class="bg-wine hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all">Ouvir Podcasts</a>
+                    <a href="#sobre" class="border-2 border-wine text-wine hover:bg-wine hover:text-white px-6 py-3 rounded-lg font-medium transition-all">Conhecer o Autor</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-wine rounded-full opacity-20 animate-float"></div>
+                    <div class="absolute inset-4 bg-wine rounded-full opacity-10 animate-float" style="animation-delay: 0.5s;"></div>
+                    <div class="absolute inset-8 bg-wine rounded-full opacity-5 animate-float" style="animation-delay: 1s;"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fas fa-wine-glass-alt text-8xl wine-red animate-float" style="animation-delay: 1.5s;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcasts Section -->
+    <section id="podcasts" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl font-bold mb-12 text-center wine-red">Últimos Podcasts</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Podcast 1 -->
+                <div class="podcast-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 bg-wine flex items-center justify-center">
+                        <i class="fas fa-headphones text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="title-font text-xl font-bold wine-red">Os Patriarcas - parte I - Abraão</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">45 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A história de Abraão, abordando seus relacionamentos com Sara e Agar. O quase sacrifício de Isaque.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Versão pt</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">Versão en</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Podcast 2 -->
+                <div class="podcast-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 bg-wine flex items-center justify-center">
+                        <i class="fas fa-headphones text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="title-font text-xl font-bold wine-red">Os Patriarcas - parte II - Isaque</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">38 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A história de Isaque, o intermediário, meio apático, entre seu Abraão e seu Jacob</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Versão pt</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">Versão en</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Podcast 3 -->
+                <div class="podcast-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 bg-wine flex items-center justify-center">
+                        <i class="fas fa-headphones text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="title-font text-xl font-bold wine-red">Os Patriarcas - parte III - Jacob</h3>
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">52 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A história de Jacob, o enganador.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Versão pt</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">Versão en</span>
+                            <button class="bg-wine hover:bg-opacity-90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all">
+                                <i class="fas fa-play mr-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-wine text-wine hover:bg-wine hover:text-white px-6 py-3 rounded-lg font-medium transition-all">
+                    <i class="fas fa-list-ul mr-2"></i> Ver Todos os Episódios
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-wine shadow-lg">
+                            <img src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/1542033190453_i.png" alt="Professor Silvio Bonilha" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white p-2 rounded-full shadow-md">
+                            <i class="fas fa-wine-glass-alt text-2xl wine-red"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h2 class="title-font text-3xl font-bold mb-6 wine-red">Professor Silvio Bonilha</h2>
+                    <p class="text-lg mb-4">Teólogo e professor de Filosofia, pós-graduado pela Universidade Mackenzie.</p>
+                    <p class="mb-4">"Filosofia e Vinho Tinto nasceu da minha paixão por criar pontes entre o pensamento filosófico e a teologia, regados ao vinho tinto. Conhecimentos que nos convidam à degustação lenta, à reflexão profunda e à celebração da existência. Pensemos, sem medo ou restrições"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-3xl font-bold mb-12 text-center wine-red">Entre em Contato</h2>
+            
+            <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-wine text-white p-8 flex flex-col justify-center">
+                        <h3 class="title-font text-xl font-bold mb-4">Informações</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3"></i>
+                                <span>bonilha.silvio@gmail.com</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="title-font font-bold mb-3">Redes Sociais</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/profile.php?id=100086459089732" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/bonilha.silvio/" target="_blank" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition-all">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-wine focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-wine focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-wine focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-wine hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-wine text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="title-font text-2xl font-bold mb-4">Se gostou poderá contribuir com uma doação:</h2>
+            <p class="max-w-2xl mx-auto mb-6 opacity-90">Nosso pix <b>"bonilha.silvio@gmail.com" </b><br> ou pelo <b>QRcode</b></p>
+            <div class="w-[90px] h-[90px] flex items-center justify-center mx-auto">
+                <img src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/image_qrcode-2025-05-18%20at%2023.29.51.png" alt="QR code" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-wine-glass-alt text-2xl mr-2 wine-red"></i>
+                        <span class="title-font text-xl">Filosofia e Vinho Tinto</span>
+                    </div>
+                </div>
+                <div>
+                    <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+                        <img src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/CreativeCommons-CC-2025-05-18_21-04.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Player (hidden by default) -->
+    <div id="audioPlayer" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden transform translate-y-full transition-transform duration-300">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="flex items-center mb-4 md:mb-0 md:w-1/3">
+                <button id="closePlayer" class="mr-4 text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Capa do Podcast" class="w-12 h-12 rounded mr-3">
+                <div>
+                    <h4 class="font-medium" id="playingTitle">Título do Podcast</h4>
+                    <p class="text-xs text-gray-400" id="playingAuthor">Prof. Silvio Bonilha</p>
+                </div>
+            </div>
+            <div class="md:w-1/3 flex flex-col items-center">
+                <div class="flex items-center space-x-4 mb-2">
+                    <button class="text-gray-400 hover:text-white">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="bg-wine hover:bg-opacity-90 w-10 h-10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="text-gray-400 hover:text-white">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                <div class="w-full flex items-center">
+                    <span class="text-xs text-gray-400 mr-2">1:23</span>
+                    <div class="flex-grow h-1 bg-gray-700 rounded-full overflow-hidden">
+                        <div class="bg-wine h-full" style="width: 30%;"></div>
+                    </div>
+                    <span class="text-xs text-gray-400 ml-2">4:56</span>
+                </div>
+            </div>
+            <div class="md:w-1/3 flex justify-end items-center mt-4 md:mt-0">
+                <button class="text-gray-400 hover:text-white mx-3">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <div class="w-24 h-1 bg-gray-700 rounded-full overflow-hidden">
+                    <div class="bg-gray-400 h-full" style="width: 70%;"></div>
+                </div>
+                <button class="text-gray-400 hover:text-white ml-4">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simples controle para mostrar/ocultar o player de áudio
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButtons = document.querySelectorAll('.podcast-card button');
+            const audioPlayer = document.getElementById('audioPlayer');
+            const closePlayer = document.getElementById('closePlayer');
+            const playingTitle = document.getElementById('playingTitle');
+            const playingAuthor = document.getElementById('playingAuthor');
+            
+            playButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.podcast-card');
+                    const title = card.querySelector('h3').textContent;
+                    
+                    playingTitle.textContent = title;
+                    playingAuthor.textContent = "Prof. Silvio Bonilha";
+                    
+                    audioPlayer.classList.remove('hidden');
+                    setTimeout(() => {
+                        audioPlayer.classList.remove('translate-y-full');
+                    }, 10);
+                });
+            });
+            
+            closePlayer.addEventListener('click', function() {
+                audioPlayer.classList.add('translate-y-full');
+                setTimeout(() => {
+                    audioPlayer.classList.add('hidden');
+                }, 300);
+            });
+            
+            // Simples efeito de digitação no hero
+            const heroTitle = document.querySelector('.hero-pattern h2');
+            const originalText = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if(i < originalText.length) {
+                    heroTitle.textContent += originalText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
