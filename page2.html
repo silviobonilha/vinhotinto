@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- CSS -->
+<style>
+  .podcast-section {
+    width: 100%;
+    /* ocupa toda a largura do elemento pai */
+    max-width: 350px;
+    /* largura máxima ajustável conforme desejar */
+    min-width: 250px;
+    /* largura mínima para não ficar muito estreito */
+    margin: 0 auto;
+    /* centraliza na tela */
+    padding: 16px 0;
+  }
+
+  .podcast-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .podcast-header {
+    background: #680860;  /* cor vinho */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: -10px; /* Reduz a margem, puxando o elemento de baixo para cima */
+    /* Ou, se você quer um espaço muito pequeno, defina um valor positivo pequeno */
+    /* margin-bottom: 5px; */
+
+      /* Ajuste para se aproximar da seção abaixo (margem inferior) */
+    margin-bottom: -20px; /* Exemplo: Puxa 20px para cima */
+    /* Ou use um valor positivo pequeno se quiser um espaço mínimo: margin-bottom: 5px; */
+
+    /* --- NOVOS AJUSTES --- */
+
+    /* Margem Superior (acima do header) */
+    margin-top: -10px; /* Exemplo: Remove qualquer margem superior padrão ou existente */
+    /* Se quiser afastar mais do elemento acima, use um valor positivo: margin-top: 20px; */
+
+    /* Margem Lateral Esquerda */
+    margin-left: 0px; /* Exemplo: Remove qualquer margem esquerda padrão */
+    /* Se quiser um espaço à esquerda, use um valor positivo: margin-left: 10px; */
+
+    /* Margem Lateral Direita */
+    margin-right: 0px; /* Exemplo: Remove qualquer margem direita padrão */
+    /* Se quiser um espaço à direita, use um valor positivo: margin-right: 10px; */
+
+    /* OU para centralizar e ter margens iguais nas laterais */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+
+
+  }
+
+  .podcast-header i {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .podcast-content {
+    padding: 20px;
+  }
+
+  .podcast-title {
+    color: #7c2a36;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .podcast-link {
+    float: right;
+    background: #f1f1f1;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .podcast-link a {
+    color: #7c2a36;
+    text-decoration: none;
+  }
+
+  .podcast-description {
+    color: #4b5563;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  .audio-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .audio-block span {
+    color: #6b7280;
+    font-size: 0.95rem;
+    min-width: 70px;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f8f5f2;
+    color: #333;
+  }
+
+  .title-font {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .wine-red {
+    color: #722f37;
+  }
+
+  .bg-wine {
+    background-color: #722f37;
+  }
+
+  .podcast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(114, 47, 55, 0.2);
+    flex: 0 0 30px;
+    /* largura base de cada seção */
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+
+    width: 100%;
+    /* ocupa toda a largura do elemento pai */
+    max-width: 350px;
+    /* largura máxima ajustável conforme desejar */
+    min-width: 250px;
+    /* largura mínima para não ficar muito estreito */
+    margin: 0 center;
+    /* centraliza na tela */
+    margin: 0 left;
+    /* posiciona à esquerda da tela */
+    padding: 16px 0;
+
+  }
+
+  .hero-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23722f37' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding-top: 10px; /* Adiciona espaço interno na parte superior da section */
+    padding-bottom: 50px; /* Adiciona espaço interno na parte inferior da section */
+    background-color: lightblue; /* Para visualizar o padding */
+
+    margin-left: 20px; /* Adiciona espaço à esquerda da section */
+    margin-right: 20px; /* Adiciona espaço à direito da section */
+    background-color: rgb(219, 206, 206); /* Apenas para visualizar o efeito */
+
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+</style>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filosofia e Vinho Tinto - Prof. Silvio Bonilha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  <!-- favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/favicon.ico"
+    sizes="48x48">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <article id="home" class="py-16 bg-white">
+    <header class="bg-wine text-white shadow-lg">
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-4 md:mb-0">
+            <i class="fas fa-glass-cheers text-3xl mr-3"></i>
+            <img src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/img1-80px.png"
+              style="margin: 5px;">
+            <div>
+              <h1 class="title-font text-3xl font-bold">Filosofia e Vinho Tinto</h1>
+              <p class="italic text-sm opacity-90">
+                "Então, tomando o cálice de vinho, deu graças a Deus e,<br> em seguida, o deu aos seus discípulos,
+                dizendo:<br>
+                Bebam dele todos. Isto é o meu sangue..." (Mateus 26:27,28)
+              </p>
+              <p class="italic text-sm opacity-90">"In vino veritas" Plínio, o Velho (~ 23-79 d.C.).</p>
+            </div>
+          </div>
+          <nav class="flex space-x-6">
+            <a href="https://silviobonilha.github.io/vinhotinto/#podcasts" class="hover:underline font-medium">PodCasts
+              Recentes</a>
+            <a href="https://silviobonilha.github.io/vinhotinto/#Home" class="hover:underline font-medium">Home</a>
+            <a href="https://silviobonilha.github.io/vinhotinto/#contato"
+              class="hover:underline font-medium">Contato</a>
+            <a href="https://silviobonilha.github.io/vinhotinto/#doar" class="hover:underline font-medium">Doação</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </article>
+  <!-- Conteúdo Inserido  -->
+
+ <!-- Contents Section (hero)-->
+
+  <section class="hero-pattern py-16 md:py-24">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h2 class="title-font text-4xl md:text-5xl font-bold mb-4 wine-red">PodCasts Anteriores</h2>
+        <h2 class="title-font text-3xl font-bold wine-red mb-6">Repositório dos PodCasts Anteriores</h2>
+        <div class="flex space-x-4">
+          <div class="flex-container"> <div>
+          <a href="https://sites.google.com/view/filosofiaevinhotinto/" target="_blank"
+            class="bg-wine hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium transition-all">Site dos
+            textos</a>
+          </div>
+
+           <!--  PODCAST TITLE -->
+              <div class="mt-4">            
+          <h3 class="title-font text-xl font-bold wine-red">Os Patriarcas - parte I</h3>
+              </div>
+
+<!-- AUDIO INSERT -->
+ <div class="items-left">
+        <!--p class="text-sm text-gray-700">pt </p -->
+
+        <audio controls class="w-1/1 mt-3">
+            <source src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/audio/moises-pt.mp3"
+                type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Podcasts final-->
+
+
+  </main -->
+
+ 
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <div class="flex items-center">
+
+            <i class="fas fa-glass-cheers text-2xl mr-2 wine-red"></i>
+
+            <span class="title-font text-xl">Filosofia e Vinho Tinto</span>
+
+            <!-- Version -->
+            <p>&nbsp; &nbsp; Versão: 010625</p>
+
+          </div>
+        </div>
+        <div>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+            <img
+              src="https://raw.githubusercontent.com/silviobonilha/vinhotinto/refs/heads/image/CreativeCommons-CC-2025-05-18_21-04.png"
+              alt="Creative Commons License">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+    // Simples controle para mostrar/ocultar o player de áudio
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const playButtons = document.querySelectorAll('.podcast-card button');
+      const audioPlayer = document.getElementById('audioPlayer');
+      const closePlayer = document.getElementById('closePlayer');
+      const playingTitle = document.getElementById('playingTitle');
+      const playingAuthor = document.getElementById('playingAuthor');
+
+      playButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          const card = this.closest('.podcast-card');
+          const title = card.querySelector('h3').textContent;
+
+          playingTitle.textContent = title;
+          playingAuthor.textContent = "Prof. Silvio Bonilha";
+
+          audioPlayer.classList.remove('hidden');
+          setTimeout(() => {
+            audioPlayer.classList.remove('translate-y-full');
+          }, 10);
+        });
+      });
+
+      closePlayer.addEventListener('click', function () {
+        audioPlayer.classList.add('translate-y-full');
+        setTimeout(() => {
+          audioPlayer.classList.add('hidden');
+        }, 300);
+      });
+
+      // Simples efeito de digitação no hero
+      const heroTitle = document.querySelector('.hero-pattern h2');
+      const originalText = heroTitle.textContent;
+      heroTitle.textContent = '';
+
+      let i = 0;
+      const typingEffect = setInterval(() => {
+        if (i < originalText.length) {
+          heroTitle.textContent += originalText.charAt(i);
+          i++;
+        } else {
+          clearInterval(typingEffect);
+        }
+      }, 100);
+    });
+  </script>
+
+</body>
+
+</html>
