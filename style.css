@@ -1,0 +1,172 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Fundo cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+.page-header {
+    background-color: #4F4F4F; /* Cinza */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    
+    /* Novas linhas para configurar margem lateral externa */
+    width: calc(100% - 40px); /* Exemplo: 100% menos 20px de cada lado */
+    max-width: 1160px; /* Limita a largura máxima para que não estique demais */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.page-header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-country {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    border-left: 8px solid; /* Linha de destaque */
+    border-color: #FF0000; /* Vermelho para a China */
+}
+
+.section-country:nth-of-type(2) { /* Cor diferente para a seção Índia */
+    border-color: #FF9800; /* Laranja para a Índia */
+}
+
+.section-country h2 {
+    color: #FF0000; /* Vermelho mais escuro */
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
+}
+
+.section-country:nth-of-type(2) h2 { /* Cor de título diferente para Índia */
+    color: #F44336; /* Vermelho para Índia */
+}
+
+
+.pensador-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pensador-box {
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pensador-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.pensador-box h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #3F51B5; /* Cor padrão */
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.pensador-box .periodo {
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+}
+
+.pensador-box p {
+    font-size: 1em;
+    line-height: 1.7;
+    flex-grow: 1; /* Garante que o texto ocupe o espaço disponível */
+}
+
+/* Cores específicas para o fundo dos boxes e font da China */
+.box-china-1 { background-color: #FF0000; color: yellow; } /* Vermelho */
+.box-china-1 h3 { color: yellow; border-color: rgba(255,255,255,0.3); }
+
+.box-china-2 { background-color: #FF0000; color: yellow; } /* Vermelho */
+.box-china-2 h3 { color: yellow; border-color: rgba(255,255,255,0.3); }
+
+
+/* Cores específicas para os boxes da Índia */
+.box-india-1 { background-color: #008000; color: orange; } /* Laranja */
+.box-india-1 h3 { color: orange; border-color: rgba(255,255,255,0.3); }
+
+.box-india-2 { background-color: #008000; color: orange; } /* Laranja */
+.box-india-2 h3 { color: orange; border-color: rgba(0,0,0,0.1); }
+/*.box-india-2 .periodo { color: rgba(51,51,51,0.8); } */
+
+
+.box-india-3 { background-color: #008000; color: orange; } /* Laranja avermelhado */
+.box-india-3 h3 { color: orange; border-color: rgba(255,255,255,0.3); }
+
+
+.final-note {
+    background-color: #e0f7fa; /* Azul clarinho */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.1em;
+    color: #00796B; /* Azul-petróleo */
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2em;
+    }
+    .page-header .subtitle {
+        font-size: 1em;
+    }
+    .section-country {
+        padding: 20px;
+    }
+    .section-country h2 {
+        font-size: 1.8em;
+    }
+    .pensador-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}

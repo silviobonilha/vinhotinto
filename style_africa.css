@@ -1,0 +1,131 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Fundo cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cores da bandeira do Egito */
+:root {
+    --egypt-red: #CE1126; /* Vermelho */
+    --egypt-white: #FFFFFF; /* Branco */
+    --egypt-black: #000000; /* Preto */
+    --egypt-gold: #FFD700; /* Ouro/Amarelo para a águia */
+}
+
+.page-header-africa {
+    background-color: var(--egypt-red); /* Vermelho da bandeira */
+    color: var(--egypt-white);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    
+       /* Novas linhas para configurar margem lateral externa */
+    width: calc(100% - 40px); /* Exemplo: 100% menos 20px de cada lado */
+    max-width: 1160px; /* Limita a largura máxima para que não estique demais */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+.page-header-africa h1 {
+    margin: 0;
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.page-header-africa .subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.container-africa {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-box, .info-box, .conclusion-box {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* Cores dos boxes conforme a bandeira */
+.box-red {
+    background-color: var(--egypt-red);
+    color: var(--egypt-white);
+}
+
+.box-white {
+    background-color: var(--egypt-white);
+    color: var(--egypt-black);
+    border: 1px solid #ddd; /* Borda para destacar o branco */
+}
+
+.box-black {
+    background-color: var(--egypt-black);
+    color: var(--egypt-white);
+}
+
+.box-gold {
+    background-color: var(--egypt-gold);
+    color: var(--egypt-black);
+    font-weight: bold;
+}
+
+.content-grid-africa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Branco para fundo preto */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.box-white h2 {
+    color: var(--egypt-red);
+    border-color: rgba(0,0,0,0.1);
+}
+
+.box-black h2 {
+    color: var(--egypt-gold);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.page-footer-africa {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--egypt-black);
+    color: #ccc;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .page-header-africa h1 {
+        font-size: 2em;
+    }
+    .page-header-africa .subtitle {
+        font-size: 1em;
+    }
+    .intro-box, .info-box, .conclusion-box {
+        padding: 20px;
+    }
+    .content-grid-africa {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
